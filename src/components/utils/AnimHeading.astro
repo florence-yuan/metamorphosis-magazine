@@ -1,0 +1,22 @@
+---
+const { content } = Astro.props;
+---
+
+{
+    content
+    .split(" ").map((word : String) => word.split(""))
+    .map((word : String[]) => (
+        <div class="header__word">
+            {word.map((c, i) => (
+                <span
+                    class="header__letter"
+                    style={{
+                        animationDelay: i * 0.075 + "s",
+                    }}
+                >
+                    {c}
+                </span>
+            ))}
+        </div>
+    ))
+}

@@ -1,0 +1,367 @@
+HTML
+<!-- 		<h1 class="section__header">
+    <div class="header__label">1</div>
+    <div class="header__text">Characters</div>
+</h1> -->
+<div class="characters"><br>
+    The Nameless Traveler who wanders Plutonian shores<br>
+    The Student with a dual identity<br>
+    The Nihilist who falls into fantasies<br>
+    The Young Woman who detests the burden of family
+</div>
+<div class="scrapbook-flex">
+    <div class="scrapbook-wrapper">
+        <div class="scrapbook">
+            {
+                snippets.map((snippet) => (
+                    <div
+                        class={
+                            "snippet" +
+                            (snippet.length === 0
+                                ? " snippet--blank"
+                                : "")
+                        }
+                    >
+                        <div class="snippet__text">{snippet}</div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+    <div class="scrapbook-img">
+        <div class="scrapbook__role">Sailor</div>
+        <div class="scrapbook__role">Travelor</div>
+        <div class="scrapbook__role">Nihilist</div>
+        <div class="scrapbook__role">Detective</div>
+        <div class="scrapbook__role">Idiot</div>
+        <div class="scrapbook__role">Young Girl</div>
+    </div>
+</div>
+
+CSS
+
+@keyframes bgNoise {
+    from {
+        background-position: left;
+    }
+    to {
+        background-position: right;
+    }
+}
+
+.characters {
+    text-align: justify;
+    font-size: calc(3rem + 1vw);
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+.scrapbook-flex {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* background-color: #4b4b4b; */
+    background-image: url(../assets/images/noise.svg);
+    background-size: 15%;
+    background-attachment: fixed;
+}
+
+/* .scrapbook-wrapper {
+    background-color: #4b4b4b;
+    background-image: url(../assets/images/noise.svg);
+    background-size: 15%;
+    background-attachment: fixed;
+} */
+
+.scrapbook-img {
+    position: sticky;
+    top: 0;
+    left: 0;
+    justify-self: right;
+    display: block;
+    width: 40rem;
+    height: 100vh;
+    padding: 6rem 0;
+    /* background-image: url(../assets/images/street-corner.jpg);
+    background-size: cover; */
+}
+
+.scrapbook__role {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.scrapbook__role + .scrapbook__role {
+    margin-top: 3rem;
+}
+
+.scrapbook {
+    max-width: 70rem;
+    margin: 0 auto;
+    padding: 4rem;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.snippet {
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 13rem;
+    height: 13rem;
+    font-family: "EB Garamond", serif;
+    color: black;
+    font-weight: 450;
+    background-color: white;
+    user-select: none;
+    transition: all 0.2s ease-in-out;
+}
+
+/* .snippet:nth-child(3n) {
+    grid-column: 3;
+}
+
+.snippet:nth-child(3n + 1) {
+    grid-column: 1;
+}
+
+.snippet:nth-child(3n + 2) {
+    grid-column: 2;
+} */
+
+.snippet:nth-child(3n + 1) {
+    clip-path: polygon(2% 6%, 95% 3%, 98% 100%, 3% 99%);
+}
+
+.snippet:nth-child(3n) {
+    clip-path: polygon(6% 5%, 97% 8%, 95% 100%, 3% 98%);
+}
+
+.snippet:nth-child(3n + 2) {
+    clip-path: polygon(4% 3%, 96% 5%, 96% 99%, 5% 96%);
+}
+
+.snippet:hover {
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
+}
+
+.snippet--blank {
+    width: 12rem;
+    height: 10rem;
+    pointer-events: none;
+}
+
+.snippet__text {
+    width: 100%;
+    text-align: justify;
+}
+
+.section__stories {
+    display: flex;
+    gap: 5rem;
+}
+
+.section__right {
+    width: 50rem;
+    background-color: rosybrown;
+}
+
+.section__post {
+    max-width: 30rem;
+}
+
+.section__post + .section__post {
+    margin-top: 3rem;
+}
+
+.post__title {
+    font-weight: 450;
+    margin-bottom: 1rem;
+    font-size: 3rem;
+}
+
+.post__desc {
+    font-family: "EB Garamond", serif;
+}
+
+SRC
+
+const snippets = [
+	"",
+	"",
+	"",
+	"I'm nothing. I'll always be nothing. I can't want to be something. But I have in me all the dreams of the world.",
+	"Tale of a Spring Morning lorem Presenting artists from the magazine Orpheu as “masters” (many of whom also contributed to Presença)...",
+	"I'm nothing. I'll always be nothing. I can't want to be something. But I have in me all the dreams of the world.",
+	"I'm nothing. I'll always be nothing. I can't want to be something. But I have in me all the dreams of the world.",
+	"Tale of a Spring Morning lorem Presenting artists from the magazine Orpheu as “masters” (many of whom also contributed to Presença)...",
+	"I'm nothing. I'll always be nothing. I can't want to be something. But I have in me all the dreams of the world.",
+];
+
+/* Gallery + Motion Animation */
+
+.
+
+.post__gallery-bg {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    display: flex;
+    gap: 1.5rem;
+    transform: translateX(-50%) translateY(-50%) scale(0.95);
+    opacity: 0;
+    /* animation-name: galleryMove;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; */
+    z-index: -1;
+    transition: all 0.3s ease-in-out;
+}
+
+/* .post__title:hover + .fade-anim .post__gallery-bg {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-50%);
+} */
+
+@keyframes galleryMove {
+    from {
+        transform: translateX(0%) translateY(-50%);
+    }
+    to {
+        transform: translateX(-50%) translateY(-50%);
+    }
+}
+
+/* .section__post:nth-child(3n + 1) .post__img {
+    background-image: url(../assets/images/characters/fig1.svg);
+    background-color: var(--primary-yellow);
+}
+
+.section__post:nth-child(3n + 2) .post__img {
+    background-image: url(../assets/images/characters/fig2.svg);
+    background-color: var(--primary-orange);
+}
+
+.section__post:nth-child(3n + 3) .post__img {
+    background-image: url(../assets/images/characters/fig3.svg);
+    background-color: var(--primary-pink);
+} */
+
+/* @media (min-width: 1140px) {
+    .post__img {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .post__img::before,
+    .post__img::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        display: block;
+        width: inherit;
+        height: inherit;
+        background-image: inherit;
+        background-size: inherit;
+        background-repeat: inherit;
+        background-position: inherit;
+        background-color: inherit;
+        background-blend-mode: inherit;
+    }
+
+    .post__img::before {
+        left: -1rem;
+        transform: translateX(-100%);
+    }
+
+    .post__img::after {
+        left: 1rem;
+        transform: translateX(100%);
+    }
+} */
+		<!-- <div class="section__column section__column--left">
+			<h1>From <i>Spring</i> and <i>Summer</i></h1>
+			<div id="figure-wrapper">
+				<MorphFigure id="morph-figure" />
+				<div class="morph-bg"></div>
+			</div>
+		</div> -->
+
+Section 1 Left Column CSS
+
+
+.section2 .section__column--left {
+    position: relative;
+    /* background-image: linear-gradient(45deg, var(--primary-orange), var(--primary-orange2), var(--primary-orange)); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.section2 .section__column--left h1 {
+    font-size: calc(1.5rem + 1vw);
+    font-weight: 500;
+}
+
+Arrow Right CSS
+
+
+/* .post__title::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    margin-left: 1rem;
+    width: 4rem;
+    height: 4rem;
+    background-image: url(../assets/icons/arrow_right.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: translateX(-5%) translateY(-50%) scale(0.95);
+    opacity: 0;
+    transition: inherit;
+} */
+
+/* .post__title:hover {
+    transform: skew(-5deg);
+} */
+
+Letter Animation Old CSS
+
+    /* animation-name: animLetter;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    transform-origin: bottom; */
+
+@keyframes animLetter {
+    from {
+        opacity: 0;
+        transform: rotateX(90deg) translateY(10%);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+Img URLs
+		imgUrl: "https://images.unsplash.com/photo-1551499779-ee50f1aa4d25?w=900&auto=format&fit=crop",
+		imgUrl: "https://images.unsplash.com/photo-1528785198459-ec50485704c7?ixlib=rb-0.3.5&s=3a2fc3039516555bbb2e9cd2967bd321&auto=format&fit=crop"
+		imgUrl: "https://images.unsplash.com/photo-1525543907410-b2562b6796d6?ixlib=rb-0.3.5&s=9ff8e5e718a6a40cbd0e1471235912f4&auto=format&fit=crop&w=3452&q=80",
+		imgUrl: "https://images.unsplash.com/photo-1528909257635-429e04fab8d4?w=900&auto=format&fit=crop"

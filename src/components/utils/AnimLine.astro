@@ -1,0 +1,19 @@
+---
+const { content } = Astro.props;
+---
+
+{
+    content
+    .split('')
+    .map((c : string, i : number) => (
+        <span
+            class="header__letter"
+            style={{
+                animationDelay: i * 0.05 + "s",
+                whiteSpace: c === ' ' ? 'preserve-spaces' : 'normal'
+            }}
+        >
+            {c}
+        </span>
+    ))
+}

@@ -1,0 +1,9 @@
+---
+import AnimHeading from "./AnimHeading.astro";
+const { content } = Astro.props;
+---
+
+<div class="section__heading">
+    <AnimHeading content={content} />
+    <div class="heading__trailing" />
+</div>

@@ -2,8 +2,8 @@
 layout: ../../layouts/MarkdownPostLayout.astro
 title: 'Self and its Personas'
 pubDate: '15 Jun 2025'
-formattedDate: '2025-06-15'
-description: 'This is the first post of _The Metamorphosis_.'
+date: 2025-06-15T00:00:00.000Z
+description: 'This is the first post of The Metamorphosis.'
 author: 'Florence Yuan'
 # image:
 #     url: '/src/assets/images/posts/blog_post1_what_we_see.png'

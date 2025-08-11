@@ -1,6 +1,6 @@
 .post {
     width: 65rem;
-    margin: 3rem auto;
+    margin: 10rem auto 6rem;
     max-width: 90%;
 }
 
@@ -12,10 +12,14 @@
 }
 
 .post__title {
-    font-weight: 500;
     font-size: 5rem;
+    font-weight: 500;
     margin-bottom: 0.2em;
-    font-family: "Forum", serif;
+}
+
+.post__author {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1.2rem;
 }
 
 .post__description {
@@ -29,11 +33,24 @@
 
 .post__body {
     margin-top: 2em;
+    /* font-family: 'EB Garamond', serif; */
+    line-height: 2;
+}
+
+.post__body p:first-child::first-letter {
+    font-size: 6rem;
+    font-weight: 500;
+    float: left;
+    font-family: "Josefin Sans", sans-serif;
 }
 
 .post__body a {
     color: var(--primary-orange);
     font-weight: 500;
+}
+
+.post__body > p + p {
+    margin-top: 0.5em;
 }
 
 .post__tags {

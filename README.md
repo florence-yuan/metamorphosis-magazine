@@ -1,3 +1,3 @@
 # Metamorphosis Magazine
 
-A Magazine for young writers
+A magazine for young writers

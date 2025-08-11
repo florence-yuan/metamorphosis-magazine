@@ -1,0 +1,59 @@
+---
+import * as featuredPost1 from "../../pages/posts/1_magazine_intro.md";
+import * as featuredPost2 from "../../pages/stories/1_no_mans_land.md";
+import * as featuredPost3 from "../../pages/posts/1_magazine_intro.md";
+import * as featuredPost4 from "../../pages/stories/1_no_mans_land.md";
+
+const featuredCharacters = [
+    {
+        url: "#",
+        name: "Eliot Winterhalter",
+        author: "Megan R.",
+        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam est repellendus mollitia",
+    },
+    {
+        url: "#",
+        name: "Ippolit, Nihilist",
+        author: "Richard B..",
+        desc: "Unde nulla, quia recusandae suscipit dolorum doloremque assumenda cupiditate officiis eos numquam dolore. Accusantium, iste tempora? Laborum, quae!",
+    },
+    {
+        url: "#",
+        name: "Eliot Winterhalter",
+        author: "Carla C.",
+        desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam est repellendus mollitia",
+    },
+    {
+        url: "#",
+        name: "Ippolit, Nihilist",
+        author: "Matilda B.",
+        desc: "Unde nulla, quia recusandae suscipit dolorum doloremque assumenda cupiditate officiis eos numquam dolore. Accusantium, iste tempora? Laborum, quae!",
+    },
+    // {
+    //     url: "#",
+    //     name: "Eliot Winterhalter",
+    //     author: "Lawrence D.",
+    //     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam est repellendus mollitia",
+    // },
+];
+
+// function formatDate(date) {
+//     console.log(date)
+// }
+---
+
+{
+    featuredCharacters.map(({ url, name, desc, author }) => (
+        <a href={url ? url : "#"} class="featured__ch">
+            <div class="ch__title">
+                {name}
+            </div>
+            <p class="ch__author">
+                Created by {author}
+            </p>
+            <p class="ch__desc">
+                {desc}
+            </p>
+        </a>
+    ))
+}

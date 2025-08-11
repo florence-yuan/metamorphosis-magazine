@@ -1,0 +1,40 @@
+---
+import * as featuredPost1 from "../../pages/posts/1_magazine_intro.md";
+import * as featuredPost2 from "../../pages/stories/1_no_mans_land.md";
+import * as featuredPost3 from "../../pages/posts/1_magazine_intro.md";
+import * as featuredPost4 from "../../pages/stories/1_no_mans_land.md";
+
+const featuredLinks = [
+    featuredPost1,
+    featuredPost2,
+    featuredPost3,
+    featuredPost4,
+];
+
+---
+
+{
+    featuredLinks.map(({ url, frontmatter }, i) => (
+        <a href={url ? url : "#"} class="featured__post">
+            <p class="fpost__date">
+                {new Date(frontmatter.date).toLocaleDateString()}
+            </p>
+            <div class="fpost__title">
+                {frontmatter.title}
+                <div class="post__arrow" />
+            </div>
+            <p class="fpost__author">
+                by{" "}
+                {/* <a href="#" class="link"> */}
+                    {frontmatter.author}
+                {/* </a> */}
+            </p>
+            <p class="fpost__desc">
+                {frontmatter.description}
+
+                    {i === 0 ? 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam est repellendus mollitia!'
+                    : 'Unde nulla, quia recusandae suscipit dolorum doloremque assumenda cupiditate officiis eos numquam dolore. Accusantium, iste tempora? Laborum, quae!'}
+            </p>
+        </a>
+    ))
+}

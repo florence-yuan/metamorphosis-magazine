@@ -1,0 +1,48 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import FeaturedPosts from "../components/index/FeaturedPosts.astro";
+import FeaturedCharacters from "../components/index/FeaturedCharacters.astro";
+
+import "../styles/stories.css";
+
+const masthead = "The Metamorphosis";
+
+const allStories = Object.values(
+	import.meta.glob("./stories/*.md", { eager: true }),
+);
+---
+
+<BaseLayout>
+	<article class="article">
+		<div class="stories">
+			<h1 class="heading">Stories</h1>
+			{
+				allStories.map((post: any, i) => (
+					<a href={post.url ? post.url : "#"} class="featured__post">
+						<p class="fpost__date">
+							{new Date(
+								post.frontmatter.date,
+							).toLocaleDateString()}
+						</p>
+						<div class="fpost__title">
+							{post.frontmatter.title}
+							<div class="post__arrow" />
+						</div>
+						<p class="fpost__author">
+							by {/* <a href="#" class="link"> */}
+							{post.frontmatter.author}
+							{/* </a> */}
+						</p>
+						<p class="fpost__desc">
+							{post.frontmatter.description}
+
+							{i === 0
+								? "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam est repellendus mollitia!"
+								: "Unde nulla, quia recusandae suscipit dolorum doloremque assumenda cupiditate officiis eos numquam dolore. Accusantium, iste tempora? Laborum, quae!"}
+						</p>
+					</a>
+				))
+			}
+		</div>
+	</article>
+</BaseLayout>

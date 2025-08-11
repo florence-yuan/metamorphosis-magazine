@@ -1,183 +1,101 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import AnimHeading from "../components/utils/AnimHeading.astro";
-import AnimLine from "../components/utils/AnimLine.astro";
-import StaticFigure from "../components/StaticFigure.astro";
-import SectionHeading from "../components/utils/SectionHeading.astro";
+import FeaturedPosts from "../components/index/FeaturedPosts.astro";
+import FeaturedCharacters from "../components/index/FeaturedCharacters.astro";
 
 import "../styles/index.css";
 
 const masthead = "The Metamorphosis";
-const issueTitles = [
-	"Spring 2025 - Prelude",
-	"Summer 2025 - Transition",
-	"Fall 2025 - Meditation",
-	"Winter 2025 - Oblivious",
+
+/* const featuredNames = [
+	"Poet Baudelaire",
+	"Artist Winterhalter",
+	"Itinerant Shepherd",
+	"Traveller",
+	"Nihilist Ippolit",
+	"Violinist Sarasate",
 ];
 
-const featuredPosts = [
-	{
-		title: "The Land of the Void",
-		author: "Eliot Winterhalter, poet",
-		desc: "Body text for whatever you'd like to add more to the\
-				main point. It provides details, explanations, and\
-				context.",
-	},
-	{
-		title: "Summer Notes",
-		author: "A. E. Gibbons, art lover",
-		desc: "Tale of a Spring Morning lorem Presenting artists from the magazine Orpheu as “masters” (many of whom also contributed to Presença)...",
-	},
-	{
-		title: "The Land of the Void",
-		author: "Limberlost of Wanderlust",
-		desc: "Body text for whatever you'd like to say. Add main\
-				takeaway points, quotes, anecdotes.",
-	},
-	{
-		title: "No Name's Land",
-		author: "The Traveller",
-		link: "/stories/1_no_mans_land",
-		desc: "I'm nothing. I'll always be nothing. I can't want to be something. But I have in me all the dreams of the world.",
-	},
-];
+const lenStep = 5;
+const lineLen = [];
+for (let llen = 100 - 10 * lenStep; llen <= 100; llen += lenStep)
+	lineLen.push(llen);
 
-const lines = [];
-for (let i = 0; i < 60; i++) {
-	lines.push(i);
-}
-
-const CAREERS = ['writer', 'poet', 'sailor'];
+lineLen.push(...lineLen.toReversed().slice(1)); */
 ---
 
 <BaseLayout>
-	<section class="section hero-section section--1c">
-		<div class="hero__desc">
-			A magazine for the young person with many identities<br />
-			"...I have in me all the dreams of the world." -- Fernando Pessoa
+	<section class="section hero-section">
+		<div class="hero__top">
+			<!-- <div class="hero__img">
+				{lineLen.map(llen => (
+					<div class="hero__line" style={{height: llen + '%'}} />
+				))}
+				<div class="hero__cap" />
+			</div> -->
+			<h1 class="anim hero__heading">
+				{masthead}
+			</h1>
+			<h1 class="hero__heading hero__clip">
+				{masthead}
+			</h1>
 		</div>
-		<StaticFigure />
-		<h1 class="anim hero__heading">
-			<AnimHeading content={masthead} />
-		</h1>
-		<!-- <div class="hero__issues-flex">
-			{
-				issueTitles.map((title) => (
-					<a href="#" class="issue-title">
-						{title}
-					</a>
-				))
-			}
+		<div class="window-gallery">
+			<a href="#" class="window-wrapper">
+				<div class="window__content">
+					<div class="window__title">No Name's Land</div>
+					<div class="window__author">Eliot Winterhalter</div>
+				</div>
+			</a>
+			<a href="#" class="window-wrapper">
+				<div class="window__content">
+					<div class="window__title">Wanderlust</div>
+					<div class="window__author">Traveller</div>
+				</div>
+			</a>
+			<a href="#" class="window-wrapper">
+				<div class="window__content">
+					<div class="window__title">Folk tales of the east</div>
+					<div class="window__author">Eliot Winterhalter</div>
+				</div>
+			</a>
+		</div>
+		<!-- <div class="hero__featured">
+			<FeaturedPosts />
+			<a href="#" class="link--btn btn--load">More stories</a>
 		</div> -->
-		<div class="hero__msg">
-			<p>
-				New to <i>The Metamorphosis</i>? Glance over our 
-				<a href="/posts/1_magazine_intro">intro section</a> or
-				take a look at our <a href="#featured_stories">latest stories</a>
-			</p>
 	</section>
-	<!-- /* Substitute images with squiggly lines, curves, and dots */ -->
-	<section id="featured_stories" class="section section2 section--2c section--pc">
-		<div class="section__column">
-			<div class="anim">
-				<SectionHeading content="Latest Stories" />
-			</div>
-			<div>
-				{
-					featuredPosts.map(({ title, author, desc, link }) => (
-						<div class="anim fade-anim section__post">
-							{/* <a href="#" class="post__bg-link" /> */}
-							<a href={link ? link : "#"} class="post__title">
-								<AnimLine content={title} />
-								<div class="post__arrow" />
-							</a>
-							{/* <div class="post__bg" /> */}
-							<div
-								class="post__img"
-							/>
-							<p class="post__author">
-								by <a href="#">{author}</a>
-							</p>
-							<p class="post__desc">{desc}</p>
-						</div>
-					))
-				}
+	<section id="story-section" class="section section2 section--2c">
+		<div class="section__inner">
+			<h1 class="section__heading">Featured stories</h1>
+			<div class="section__body">
+				<!-- <div class="bg__img">
+					{lineLen.map(llen => (
+						<div class="bg__line" style={{width: llen + '%'}} />
+					))}
+					<div class="bg__cap" />
+				</div> -->
+				<div class="section__main section2__featured">
+					<FeaturedPosts />
+					<a href="#" class="link--btn btn--load">More stories</a>
+				</div>
 			</div>
 		</div>
 	</section>
-	<section id="heteronyms" class="section section3 section--1c">
-		<!-- <div class="heteronym-gallery">
-			{[...Array.from(Array(12).keys())].map(i => (
-				<div class="heteronym-icon" />
-			))}
-		</div> -->
-		<!-- <MorphFigure id="morph-figure" /> -->
-		 <!-- <div class="figure-identities">
-			{[...Array.from(Array(50).keys())].map(i => (
-				<div
-					class="fig-id"
-					style={{
-						top: `${(Math.round(Math.random() * 10) + 1) * 7.5}%`,
-						left: `${(Math.round(Math.random() * 10) + 1) * 7.5}%`,
-						transform: `rotate(${Math.round(Math.random() * 20) - 10}deg)`
-					}}
-				>
-					{CAREERS[i % CAREERS.length]}
+	<section id="story-section" class="section section3">
+		<div class="section__inner">
+			<h1 class="section__heading">Dramatis Personae</h1>
+			<div class="section__body">
+				<div class="section3__intro">
+
 				</div>
-			))}
-		 </div> -->
-		 <div id="anim-figure"></div>
-		<div class="heteronym__intro">
-			<h1>What are heteronyms?</h1>
-			<p>
-				Heteronyms are different names by which a writer expresses himself - an acknowledgement of the different facets of self, a bold exploration of the endless dimensions of being.
-			</p>
-			<p>
-				They are not merely pseudonyms. They are an entirely different identity.
-		
-			</p>
-			<p>
-				At <i>The Metamorphosis</i>, all these alter-egoes are celebrated.
-				Choose a heteronym or invent your own. Read and write and revel in all these parts of self, much like Pessoa, Kierkegaard,
-				and even Schumann.<br>
-			</p>
-		</div>
-	</section>
-	<section style="height: 100vh; background-color: #eee">Just filler</section>
-	<section class="section section4">
-		<div class="anim">
-			<SectionHeading content="Characters / Heteronyms" />
-		</div>
-		<div class="section__heading">latest stories</div>
-		<div class="section__stories">
-			<div class="section__left">
-				<div class="section__post">
-					<h1 class="post__title">The Land of the Void</h1>
-					<p class="post__desc">
-						“lorem Presenting artists from the magazine Orpheu as
-						“masters” (many of whom also contributed to
-						Presença)...” lorem ipsum ladfjkdf I'm nothing. I'll
-						always be nothing. I can't want to be something. But I
-						have in me all the dreams of the world.
-					</p>
-				</div>
-				<div class="section__post">
-					<h1 class="post__title">Summer Notes</h1>
-					<p class="post__desc">
-						Body text for whatever you'd like to say. Add main
-						takeaway points, quotes, anecdotes.
-					</p>
-				</div>
-				<div class="section__post">
-					<h1 class="post__title">The Land of the Void</h1>
-					<p class="post__desc">
-						“Body text for whatever you'd like to add more to the
-						main point. It provides details, explanations, and
-						context.
-					</p>
+				<div class="section__main section3__featured">
+					<div class="featured__inner">
+						<FeaturedCharacters />
+					</div>
+					<a href="#" class="link--btn btn--load">More characters</a>
 				</div>
 			</div>
-			<div class="section__right"></div>
 		</div>
 	</section>
 </BaseLayout>

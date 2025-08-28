@@ -1,0 +1,188 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import "../styles/collections.css";
+import allStoryUrls from "../pages/collections/collection_details.json"
+
+const { frontmatter } = Astro.props;
+const textColor = frontmatter.image.color
+const bgColor = frontmatter.image.bgColor;
+
+const url_parts = frontmatter.url.split("/");
+const colUrl = url_parts[url_parts.length - 1]
+
+const colStoryUrls = allStoryUrls[colUrl];
+
+const allStories = Object.values(
+    import.meta.glob("../pages/stories/*.md", {eager: true})
+);
+
+const colStories = colStoryUrls.map(surl => (
+    allStories.find(s => s.file.includes(surl))
+));
+
+console.log(colStories)
+
+
+/* const colStoryUrls = Object.values(
+	import.meta.glob("../pages/collections/collection_details.json", { eager: true }),
+)[0];
+
+const colStories = colStoryUrls.map(url => (
+    Object.values(import.meta.glob("../pages/stories/" + url + ".md", { eager: true }))[0]
+)); */
+
+---
+
+<BaseLayout>
+    <article class="collection">
+        <header class="col__header">
+            <div
+                class="col__bg"
+            >
+            </div>
+            <div class="header__inner">
+                <div
+                    class="col__cover"
+                    style={{
+                        backgroundImage: frontmatter.image.url
+                            ? `url(${frontmatter.image.url})`
+                            : "none",
+                    }}
+                >
+                    <h1 class="cover__title">{frontmatter.title}</h1>
+                    <p class="cover__author">By {frontmatter.author}</p>
+                </div>
+                <div class="col__b">
+                    <h1 class="col__title">{frontmatter.title}</h1>
+                    <p class="col__author">By {frontmatter.author}</p>
+                </div>
+            </div>
+        </header>
+        <main class="col__body">
+            <div class="col__desc">
+                <slot />
+            </div>
+            <div class="col__stories">
+                {colStories.map(({url, frontmatter}) => (
+                    <a href={url ? url : "#"} class="featured__post">
+                        <p class="fpost__date">
+                            {new Date(frontmatter.date).toLocaleDateString()}
+                        </p>
+                        <div class="fpost__title">
+                            {frontmatter.title}
+                            <div class="post__arrow" />
+                        </div>
+                        <p class="fpost__author">
+                            by{" "}
+                            {frontmatter.author}
+                        </p>
+                        <p class="fpost__desc">
+                            {frontmatter.description}
+                        </p>
+                    </a>
+                ))}
+<!--                 {colStories.map(story => (
+                    <a href={story.url} class="col__story">{story.frontmatter.title}</a>
+                ))} -->
+            </div>
+        </main>
+    </article>
+</BaseLayout>
+
+<style define:vars={{textColor, bgColor}}>
+    .col__stories {
+        margin: 3rem auto 0;
+        max-width: 50rem;
+    }
+
+    .col__stories .fpost__title {
+        line-height: 1.4;
+    }
+
+    .col__story {
+        display: block;
+        color: var(--text-color);
+    }
+
+    .collection {
+        width: 100%;
+        margin-top: 5rem;
+    }
+
+    .col__header {
+        position: relative;
+        display: block;
+        width: 100%;
+    }
+
+    .col__bg {
+        position: relative;
+        width: 100%;
+        height: 20rem;
+        background-color: var(--textColor);
+        z-index: -1;
+    }
+
+    .col__header .header__inner {
+        position: relative;
+        margin-left: calc(4rem + 10vw);
+        margin-top: -15rem;
+        display: flex;
+        gap: 3.5rem;
+        align-items: center;
+    }
+
+    .col__header .header__inner::before {
+        content: "";
+        position: absolute;
+        top: -2rem;
+        left: 5rem;
+        display: block;
+        width: calc(100% - 9rem);
+        height: calc(100% - 8rem);
+        z-index: -1;
+    }
+
+    .col__cover {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 0.8rem;
+        padding: 0 1rem 1.5rem;
+        width: 15rem;
+        height: 21rem;
+        background-color: var(--bgColor);
+        background-size: 100%;
+        color: var(--textColor);
+        text-transform: uppercase;
+        user-select: none;
+    }
+
+    .cover__title {
+        text-align: center;
+        line-height: 1.2;
+    }
+
+    .cover__author {
+        font-weight: 500;
+        letter-spacing: 0.1rem;
+    }
+
+    .col__b {
+        transform: translateY(110%);
+    }
+
+    .col__title {
+        font-size: 2.5rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+    }
+
+    .col__body {
+        max-width: 60rem;
+        margin: 4rem auto 0;
+        line-height: 1.8;
+    }
+</style>

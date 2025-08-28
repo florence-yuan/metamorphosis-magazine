@@ -22,80 +22,127 @@ for (let llen = 100 - 10 * lenStep; llen <= 100; llen += lenStep)
 	lineLen.push(llen);
 
 lineLen.push(...lineLen.toReversed().slice(1)); */
+
+console.log("HEYEYE");
+const collections = Object.values(
+	import.meta.glob("./collections/*.md", { eager: true }),
+);
+// const collections = [
+// 	{
+// 		link: "folktales_of_the_east",
+// 		title: "Folk tales of the east"
+// 	}
+// ]
+/* const colResponse = await fetch("./collections/collection_details.json");
+const colData = await colResponse.json(); */
+// console.log(colData[0]);
 ---
 
 <BaseLayout>
 	<section class="section hero-section">
-		<div class="hero__top">
-			<!-- <div class="hero__img">
-				{lineLen.map(llen => (
-					<div class="hero__line" style={{height: llen + '%'}} />
-				))}
-				<div class="hero__cap" />
-			</div> -->
-			<h1 class="anim hero__heading">
-				{masthead}
-			</h1>
-			<h1 class="hero__heading hero__clip">
-				{masthead}
-			</h1>
+		<div class="hero__left">
+			<div class="left__inner">
+				<div class="left__content">
+					<h1 class="left__heading">
+						An introduction and a beginning
+					</h1>
+					<p class="left__quote">
+						"I have in me all the dreams of the world" - Fernando
+						Pessoa
+					</p>
+					<p>In metamorphoses, there is both horror and beauty.</p>
+					<p>But stasis is the most dreadful state of all.</p>
+					<p>The young live in a state of change.</p>
+					<p>
+						Whether we are bugs or men, or somewhere in between, we
+						have a unique story to tell.
+					</p>
+					<p>
+						Here we present these stories, as well as the
+						alter-egoes (be they bugs and men) of your imagination
+						that form the dramatis personae of our many
+						metamorphoses.
+					</p>
+				</div>
+				<!-- <p>THE METAMORPHOSIS - A magazine for young writers</p> -->
+			</div>
 		</div>
-		<div class="window-gallery">
-			<a href="#" class="window-wrapper">
-				<div class="window__content">
-					<div class="window__title">No Name's Land</div>
-					<div class="window__author">Eliot Winterhalter</div>
-				</div>
-			</a>
-			<a href="#" class="window-wrapper">
-				<div class="window__content">
-					<div class="window__title">Wanderlust</div>
-					<div class="window__author">Traveller</div>
-				</div>
-			</a>
-			<a href="#" class="window-wrapper">
-				<div class="window__content">
-					<div class="window__title">Folk tales of the east</div>
-					<div class="window__author">Eliot Winterhalter</div>
-				</div>
-			</a>
-		</div>
-		<!-- <div class="hero__featured">
-			<FeaturedPosts />
-			<a href="#" class="link--btn btn--load">More stories</a>
-		</div> -->
-	</section>
-	<section id="story-section" class="section section2 section--2c">
-		<div class="section__inner">
-			<h1 class="section__heading">Featured stories</h1>
-			<div class="section__body">
-				<!-- <div class="bg__img">
+		<div class="hero__right">
+			<div class="hero__top">
+				<!-- <div class="hero__img">
 					{lineLen.map(llen => (
-						<div class="bg__line" style={{width: llen + '%'}} />
+						<div class="hero__line" style={{height: llen + '%'}} />
 					))}
-					<div class="bg__cap" />
+					<div class="hero__cap" />
 				</div> -->
-				<div class="section__main section2__featured">
-					<FeaturedPosts />
-					<a href="#" class="link--btn btn--load">More stories</a>
+				<h1 class="anim hero__heading">
+					The Metamo<br />rphosis
+				</h1>
+				<h1 class="hero__heading2">Featured collections</h1>
+				<!-- <h1 class="hero__heading hero__clip">
+					{masthead}
+				</h1> -->
+				<div class="hero__desc">
+					A magazine for young writers<br />
+					With thematic releases and character galleries
 				</div>
 			</div>
-		</div>
-	</section>
-	<section id="story-section" class="section section3">
-		<div class="section__inner">
-			<h1 class="section__heading">Dramatis Personae</h1>
-			<div class="section__body">
-				<div class="section3__intro">
-
-				</div>
-				<div class="section__main section3__featured">
-					<div class="featured__inner">
-						<FeaturedCharacters />
+			<div class="window-gallery">
+				{
+					collections.map((col: any, i) => (
+						<a href={col.url} class="window-wrapper">
+							<div class="window__content">
+								<div class="window__title">
+									{col.frontmatter.title}
+								</div>
+								<div class="window__author">
+									{col.frontmatter.author}
+								</div>
+							</div>
+						</a>
+					))
+				}
+				<a href="#" class="window-wrapper window--more">
+					<div class="window__content">
+						Have an idea for a new collection? Share your idea here.
 					</div>
-					<a href="#" class="link--btn btn--load">More characters</a>
-				</div>
+				</a>
 			</div>
 		</div>
 	</section>
+	<div class="body-wrapper">
+		<section id="story-section" class="section section2 section--2c">
+			<div class="section__inner">
+				<h1 class="section__heading">Featured stories</h1>
+				<div class="section__body">
+					<!-- <div class="bg__img">
+						{lineLen.map(llen => (
+							<div class="bg__line" style={{width: llen + '%'}} />
+						))}
+						<div class="bg__cap" />
+					</div> -->
+					<div class="section__main section2__featured">
+						<FeaturedPosts />
+						<a href="#" class="link--btn btn--load">More stories</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="story-section" class="section section3">
+			<div class="section__inner">
+				<h1 class="section__heading">Dramatis Personae</h1>
+				<div class="section__body">
+					<div class="section3__intro"></div>
+					<div class="section__main section3__featured">
+						<div class="featured__inner">
+							<FeaturedCharacters />
+						</div>
+						<a href="#" class="link--btn btn--load"
+							>More characters</a
+						>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
 </BaseLayout>

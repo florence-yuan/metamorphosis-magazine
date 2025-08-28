@@ -23,6 +23,7 @@
     --text-color3: rgb(119, 119, 119);
 
     --primary-blue: #96ced9;
+    --primary-blue2:rgb(162, 221, 233);
     --primary-yellow: #fbde24;
     /* --light-blue: #9eb0ff; */
     --dark-brown: #893f2b;
@@ -270,7 +271,7 @@ a {
 /* Navigation */
 
 .header {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 100;
@@ -282,7 +283,7 @@ a {
     display: block;
     width: 100vw;
     padding: 1.2rem var(--body-margin) 1.3rem;
-    /* background-color: var(--body-bg); */
+    background-color: #efeeee00;
     border-bottom: 1px solid var(--gray-border);
     font-family: "Josefin Sans", sans-serif;
 }
@@ -443,8 +444,7 @@ a {
     text-transform: uppercase;
     letter-spacing: 0.5rem;
     font-weight: 500;
-    padding-bottom: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 /* .section--2c .section__body {

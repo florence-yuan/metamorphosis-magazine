@@ -62,10 +62,9 @@
 .tag {
     position: relative;
     width: max-content;
-    color: var(--primary-orange);
+    color: var(--text-color);
     background-color: var(--body-bg);
-    font-weight: 500;
-    border: 1px solid var(--primary-orange);
+    border: 1px solid var(--primary-blue);
     padding: 0.2em 1em 0.3em;
     text-decoration: none;
     overflow: hidden;
@@ -75,7 +74,7 @@
 }
 
 .tag:hover {
-    color: white;
+    background-color: var(--primary-blue);
 }
 
 .tag::before {

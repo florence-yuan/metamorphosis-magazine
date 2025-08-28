@@ -365,3 +365,250 @@ Img URLs
 		imgUrl: "https://images.unsplash.com/photo-1528785198459-ec50485704c7?ixlib=rb-0.3.5&s=3a2fc3039516555bbb2e9cd2967bd321&auto=format&fit=crop"
 		imgUrl: "https://images.unsplash.com/photo-1525543907410-b2562b6796d6?ixlib=rb-0.3.5&s=9ff8e5e718a6a40cbd0e1471235912f4&auto=format&fit=crop&w=3452&q=80",
 		imgUrl: "https://images.unsplash.com/photo-1528909257635-429e04fab8d4?w=900&auto=format&fit=crop"
+
+
+/* Line animation */
+
+    /* gsap.to(heroHeadingSplit.chars, {
+        x: (Math.random() * 200 - 100) + '%',
+        y: (Math.random() * 200 - 100) + '%',
+    }) */
+
+/*     let heroTl = gsap.timeline();
+
+    heroTl.from(heroHeadingSplit.chars, {
+        scrollTrigger: '.hero__top',
+        duration: 0.4,
+        y: '100%',
+        autoAlpha: 0,
+        stagger: 0.06,
+        delay: 0.3
+    }).from(".hero__img .hero__line", {
+        scaleY: 0,
+        stagger: {
+            each: 0.06,
+            axis: 'x',
+            from: 'edges',
+            grid: 'auto'
+        }
+    }, '<').fromTo(".hero__cap", {
+        scale: 0,
+        autoAlpha: 0,
+        clipPath: 'circle(0px at center)',
+        filter: 'saturate(0.5)'
+    }, {
+        scale: 1,
+        autoAlpha: 1,
+        clipPath: 'circle(60% at center)',
+        filter: 'none',
+        duration: 0.5
+    }, "-=0.3");
+
+    const clipHeadingSplit = SplitText.create('.hero__clip', {
+        type: "lines, chars",
+        mask: "chars"
+    }); */
+
+    // gsap.from(".hero__img", {
+    //     y: "-30%",
+    //     scaleX: 0.5,
+    //     delay: 1
+    // });
+
+/*     const animLines = gsap.utils.toArray('.featured__post, .featured__ch');
+
+    animLines.forEach(ele => {
+        const textSplit = SplitText.create(ele, {
+            type: "lines",
+            mask: "lines",
+            linesClass: "line++"
+        });
+
+        gsap.from(textSplit.lines, {
+            scrollTrigger: {
+                trigger: ele,
+                start: "top 80%"
+            },
+            duration: 0.4,
+            y: '100%',
+            autoAlpha: 0,
+            stagger: 0.1
+        })
+    }); */
+
+
+/* Window animation */
+
+    // gsap.to(".hero__top", {
+    //     scrollTrigger: {
+    //         trigger: "body",
+    //         start: "top top",
+    //         end: "+=500",
+    //         scrub: 0.2
+    //     },
+    //     yPercent: 50,
+    //     scale: 1.05
+    // });
+
+/*     gsap.to(".hero__right", {
+        scrollTrigger: {
+            trigger: "body",
+            start: "top top",
+            end: "+=700",
+            scrub: true,
+            fastScrollEnd: true,
+            snap: 0.1
+        },
+        y: '50%',
+    }); */
+
+    /* Move window */
+
+/*     gsap.set(".window-wrapper", {xPercent: -50, yPercent: -50})
+
+    const xTo = gsap.quickTo(".window-wrapper", "x", {duration: 0.6, ease: "power3"});
+    const yTo = gsap.quickTo(".window-wrapper", "y", {duration: 0.6, ease: "power3"});
+
+    const hbounds = document.querySelector(".hero__clip").getBoundingClientRect();
+    const wbounds = document.querySelector(".window-wrapper").getBoundingClientRect();
+    console.log(wbounds, hbounds)
+    // const clipTo = gsap.quickTo(".hero__clip", "clip-path", {duration: 0.6, ease: "power3"});
+    
+    window.addEventListener("mousemove", e => {
+        xTo(e.clientX);
+        yTo(e.clientY);
+
+        const clipLeft = Math.max(0, e.clientX - wbounds.width / 2 - hbounds.left);
+        const clipRight = Math.max(0, hbounds.right - e.clientX - wbounds.width / 2);
+        const clipTop = Math.max(0, e.clientY - wbounds.height / 2 - hbounds.top);
+        const clipBottom = Math.max(0, hbounds.bottom - e.clientY - wbounds.height / 2);
+        // console.log(e.clientX, clipLeft, clipRight)
+        // clipTo(`inset(0 ${clipRight}px 0 ${clipLeft}px)`);
+        gsap.to(".hero__clip", {"clip-path": `inset(${clipTop}px ${clipRight}px ${clipBottom}px ${clipLeft}px)`, duration: 0.6, ease: "power3"})
+    }) */
+
+
+
+
+
+
+/*     gsap.to(".hero__heading .line1-mask", {
+        scrollTrigger: {
+            trigger: '.hero__right',
+            start: "top top",
+            scrub: 0.1
+        },
+        xPercent: 10
+    });
+
+    gsap.to(".hero__heading .line2-mask", {
+        scrollTrigger: {
+            trigger: '.hero__right',
+            start: "top top",
+            scrub: 0.1
+        },
+        xPercent: 15
+    });
+
+    gsap.to(".hero__heading .line3-mask", {
+        scrollTrigger: {
+            trigger: '.hero__right',
+            start: "top top",
+            scrub: 0.1
+        },
+        xPercent: 20
+    }); */
+
+
+
+    /* Left panel clip */
+/*     gsap.from('.hero__left', {
+        scrollTrigger: {
+            trigger: '.hero__left',
+            start: "top top",
+            end: "+=10000",
+            scrub: 0.1
+        },
+        width: '125%',
+        ease: "power3"
+    }); */
+
+
+
+/*     gsap.set(".hero__heading .line1-mask", {xPercent: 15});
+    gsap.set(".hero__heading .line2-mask", {xPercent: 0});
+    gsap.set(".hero__heading .line3-mask", {xPercent: 30});
+ */
+
+     leftTl.to('.hero__left', {
+        width: '100%',
+        ease: "power3"
+    }).to('.hero__left', {
+        width: '0%',
+        ease: "power3"
+    }).to(".window-wrapper", {
+        xPercent: -100
+    }, "<=")
+    .to('.hero__heading', {
+        duration: 1,
+        text: "Featured collections",
+        xPercent: -40,
+        yPercent: -125,
+        fontSize: '6rem',
+        fontWeight: '300'
+    });
+
+/* .ch__author {
+    font-family: "Josefin Sans", sans-serif;
+} */
+
+/* Other */
+
+.section4 {
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.hetero__heading {
+    font-size: 3rem;
+}
+
+.hetero__intro {
+    width: 50rem;
+    max-width: 95%;
+    font-family: 'Mate', serif;
+}
+
+.hetero__list {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin: 2rem 0;
+    padding: 1em;
+    border: 1px solid currentColor;
+    border-width: 1px 0;
+}
+
+.hetero__name {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.anim-bg {
+    position: absolute;
+    /* width: min(35rem, 40%); */
+    height: calc(100% + 10rem);
+    aspect-ratio: 9 / 16;
+    top: -5rem;
+    /* right: -3rem; */
+    left: 50%;
+    background-image: radial-gradient(circle at bottom left, #9eb0ff, 60%, #b8d1e7);
+    transform: translateX(-50%);
+    z-index: -1
+}

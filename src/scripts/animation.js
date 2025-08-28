@@ -11,56 +11,159 @@ gsap.registerPlugin(ScrollTrigger, SplitText, TextPlugin);
 function init() {
     // gsap.set("body", {autoAlpha: 1, duration: 0.3});
 
-    const heroHeadingSplit = SplitText.create('.anim.hero__heading', {
-        type: "lines, chars",
-        mask: "chars"
+    const heroHeadingSplit = SplitText.create('.hero__heading', {
+        type: "lines",
+        mask: "lines",
+        linesClass: "line++"
     });
 
-    /* gsap.to(heroHeadingSplit.chars, {
-        x: (Math.random() * 200 - 100) + '%',
-        y: (Math.random() * 200 - 100) + '%',
-    }) */
+/*     gsap.from(heroHeadingSplit.lines, {
+        yPercent: 150,
+        stagger: 0.15,
+        ease: "power2",
+        duration: 0.6
+    }); */
 
-    let heroTl = gsap.timeline();
+    const colHeadingSplit = SplitText.create('.hero__heading2', {
+        type: "lines",
+        mask: "lines",
+    });
+    gsap.set(colHeadingSplit.lines, {yPercent: 120});
 
-    heroTl.from(heroHeadingSplit.chars, {
-        scrollTrigger: '.hero__top',
-        duration: 0.4,
-        y: '100%',
-        autoAlpha: 0,
-        stagger: 0.06,
-        delay: 0.3
-    }).from(".hero__img .hero__line", {
-        scaleY: 0,
-        stagger: {
-            each: 0.06,
-            axis: 'x',
-            from: 'edges',
-            grid: 'auto'
+    const heroDescLines = SplitText.create('.hero__desc', {
+        type: "lines",
+    });
+
+    gsap.to(heroDescLines.lines, {
+        scrollTrigger: {
+            trigger: '.story-section',
+            start: "200",
+            end: "+=50",
+            scrub: 1
+        },
+        yPercent: -100,
+        autoAlpha: 0
+    });
+
+    gsap.set(".hero__left", {width: '125%'});
+
+    let heroTl = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.hero__left',
+            start: "top top",
+            end: "+=1000",
+            scrub: 0.3
         }
-    }, '<').fromTo(".hero__cap", {
-        scale: 0,
-        autoAlpha: 0,
-        clipPath: 'circle(0px at center)',
-        filter: 'saturate(0.5)'
-    }, {
-        scale: 1,
-        autoAlpha: 1,
-        clipPath: 'circle(60% at center)',
-        filter: 'none',
-        duration: 0.5
-    }, "-=0.3");
-
-    const clipHeadingSplit = SplitText.create('.hero__clip', {
-        type: "lines, chars",
-        mask: "chars"
     });
 
-    // gsap.from(".hero__img", {
-    //     y: "-30%",
-    //     scaleX: 0.5,
-    //     delay: 1
-    // });
+    let leftPanelTl = gsap.timeline()
+    leftPanelTl.to('.hero__left', {
+        width: '0%',
+        paddingLeft: '0',
+        paddingRight: '0',
+        ease: "power",
+        duration: 1
+    }).to(".window-wrapper", {
+        xPercent: window.innerWidth < 1480 ? -250 : -220,
+        x: window.innerWidth / 5
+    }, "<=");
+
+    let headingTl = gsap.timeline();
+    headingTl.to(heroHeadingSplit.lines, {
+        yPercent: 110,
+        duration: 0.4
+    })
+    .to(colHeadingSplit.lines, {
+        yPercent: 0,
+        duration: 0.4
+    }, "<=")
+    .to('.hero__heading2', {
+/*         x: `calc(5vw - 15%)`,
+        x: window.innerWidth / 20 - */
+        x: -100,
+        xPercent: window.innerWidth < 1480 ? -10 : -5,
+    }, "+=0.6")
+    .to(heroHeadingSplit.lines, {
+        display: 'none'
+    }, "<=")
+    .to('.window--more', {
+        maxWidth: '350'
+    })
+    .to('.nav', {
+        backgroundColor: 'var(--body-bg)'
+    });
+    
+    heroTl
+        .add(leftPanelTl)
+        .add(headingTl, "<=");
+
+    /* Left panel border fade */
+    gsap.to('.hero__left', {
+        scrollTrigger: {
+            trigger: '.hero__left',
+            start: "top top",
+            end: "+=2000",
+            scrub: 0.1
+        },
+        borderRightColor: 'transparent',
+        ease: "power3"
+    });
+
+    /* Left panel inner content fade */
+    gsap.to('.left__inner', {
+        scrollTrigger: {
+            trigger: '.hero__left',
+            start: "top top",
+            scrub: 0.1
+        },
+        opacity: '0',
+        ease: "power3"
+    });
+
+    gsap.to('.hero__heading', {
+        xPercent: 10,
+        ease: "power3",
+    });
+
+/*     gsap.to('.hero__heading', {
+        scrollTrigger: {
+            trigger: '.hero__right',
+            start: "top top",
+            scrub: 0.1
+        },
+        yPercent: -40,
+        ease: "power3"
+    });
+
+    gsap.to('.hero__heading > .line1-mask', {
+        scrollTrigger: {
+            trigger: '.hero__right',
+            start: "top top",
+            scrub: 0.1,
+        },
+        xPercent: -5,
+        ease: "power3"
+    });
+
+    gsap.to('.hero__heading > .line2-mask', {
+        scrollTrigger: {
+            trigger: '.hero__right',
+            start: "top top",
+            scrub: 0.1,
+        },
+        xPercent: -20,
+        ease: "power3"
+    });
+
+    gsap.to('.hero__heading > .line3-mask', {
+        scrollTrigger: {
+            trigger: '.hero__right',
+            start: "top top",
+            scrub: 0.1,
+        },
+        xPercent: -15,
+        ease: "power3"
+    }); */
 
     const sectionHeadings = gsap.utils.toArray(".section__heading");
 
@@ -75,7 +178,7 @@ function init() {
         gsap.from(textSplit.lines, {
             scrollTrigger: {
                 trigger: ele,
-                start: "top 80%"
+                start: "top bottom"
             },
             duration: 0.4,
             y: '200%',
@@ -84,88 +187,21 @@ function init() {
         })
     });
 
-    const animLines = gsap.utils.toArray('.featured__post, .featured__ch');
-
-    animLines.forEach(ele => {
-        const textSplit = SplitText.create(ele, {
-            type: "lines",
-            mask: "lines",
-            linesClass: "line++"
-        });
-
-        // console.log(textSplit.lines)
-
-        gsap.from(textSplit.lines, {
-            scrollTrigger: {
-                trigger: ele,
-                start: "top 80%"
-            },
-            duration: 0.4,
-            y: '100%',
-            autoAlpha: 0,
-            stagger: 0.1
-        })
+    gsap.set(".window-wrapper", {
+        scale: 0.7,
+        xPercent: 20
     });
 
     gsap.to(".window-wrapper", {
         scrollTrigger: {
             trigger: "body",
             start: "top top",
-            end: "+=700",
+            end: "+=500",
             scrub: true
         },
-        y: '-20%',
-        scale: 0.95
+        y: '-90%',
+        scale: 0.9,
     });
-
-    // gsap.to(".hero__top", {
-    //     scrollTrigger: {
-    //         trigger: "body",
-    //         start: "top top",
-    //         end: "+=500",
-    //         scrub: 0.2
-    //     },
-    //     yPercent: 50,
-    //     scale: 1.05
-    // });
-
-    gsap.to(".hero-section", {
-        scrollTrigger: {
-            trigger: "body",
-            start: "top top",
-            end: "+=700",
-            scrub: true,
-            fastScrollEnd: true,
-            snap: 0.1
-            // pin: true
-        },
-        y: '50%',
-    });
-
-    /* Move window */
-
-/*     gsap.set(".window-wrapper", {xPercent: -50, yPercent: -50})
-
-    const xTo = gsap.quickTo(".window-wrapper", "x", {duration: 0.6, ease: "power3"});
-    const yTo = gsap.quickTo(".window-wrapper", "y", {duration: 0.6, ease: "power3"});
-
-    const hbounds = document.querySelector(".hero__clip").getBoundingClientRect();
-    const wbounds = document.querySelector(".window-wrapper").getBoundingClientRect();
-    console.log(wbounds, hbounds)
-    // const clipTo = gsap.quickTo(".hero__clip", "clip-path", {duration: 0.6, ease: "power3"});
-    
-    window.addEventListener("mousemove", e => {
-        xTo(e.clientX);
-        yTo(e.clientY);
-
-        const clipLeft = Math.max(0, e.clientX - wbounds.width / 2 - hbounds.left);
-        const clipRight = Math.max(0, hbounds.right - e.clientX - wbounds.width / 2);
-        const clipTop = Math.max(0, e.clientY - wbounds.height / 2 - hbounds.top);
-        const clipBottom = Math.max(0, hbounds.bottom - e.clientY - wbounds.height / 2);
-        // console.log(e.clientX, clipLeft, clipRight)
-        // clipTo(`inset(0 ${clipRight}px 0 ${clipLeft}px)`);
-        gsap.to(".hero__clip", {"clip-path": `inset(${clipTop}px ${clipRight}px ${clipBottom}px ${clipLeft}px)`, duration: 0.6, ease: "power3"})
-    }) */
 }
 
 window.addEventListener("load", init);

@@ -2,20 +2,16 @@
 formattedDate: 2025-06-15
 layout: ../../layouts/MarkdownPostLayout.astro
 pubDate: 15 Jun 2025
-author: Florence Yuan
+author: The Traveller
 date: 2024-02-15T00:00:00.000Z
-thumbnail: https://images.unsplash.com/photo-1487260211189-670c54da558d?q=80&w=1287&auto=format&fit=crop
 title: No Man's Land
+collection: wanderlust
 tags:
-  - personal
-  - blogging
-  - intro
-image:
-  url: https://images.unsplash.com/photo-1528909257635-429e04fab8d4?w=900&auto=format&fit=crop
-  altText: An eye with a person inside
-description: This is the first post of _The Metamorphosis_.
+  - names
+  - loneliness
+  - exile
+description: "\"His name.  It felt so important, despite, or perhaps because of the acute loneliness of the land.  It was an anchor of sorts, a lone figment of fact whose significance was disproportionately large in a land of nothingness, for names, like these intangible vain truths, had always been an obsession for him.\"\t-\t In exile, a lonely man ponders the meaning of names."
 ---
-No Name’s Land
 The sky was faint and blue and cloudless, and without weight as it drifted over the great flat sweeps of austere, barren land.  There was no vegetation apart from some scratchy shrubs that dotted the sandy earth here and there, and at the horizon, where all was hoary, they gathered in lean and lopsided lines into a strange triangular form, that at once could be some arcane symbol, like a pyramid with seductive, sun-baked bricks, or a stack of firewood that smoked at secret times and made enemies shudder in the night.  Or it could be nothing at all, thought Nick with his usual grimness as he trudged laboriously forward, dragging his limp leg behind him.  Just some odd shape nature had scratched into the sky.  A triviality, like so many things were when you resolved them fully.  Better to think of it as trivial than not, to avoid disappointments.  But the fact was, all this trivializing was a great lie.  Secretly, though sometimes he flung the thought out just for the thrill of it, Nick had made the triangle a goal of some sort, a shape to go at.  “Get at it, you got to get at it,” his father used to say as he smoked a cigarette on the porch wearing his gray starched suit; to appear formal, Nick used to think, to appear as though he meant it.  Get at it, repeated Nick now, rather listlessly.  Go at it now.
 
 

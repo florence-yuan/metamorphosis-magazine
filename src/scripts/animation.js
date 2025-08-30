@@ -37,7 +37,7 @@ function init() {
     gsap.to(heroDescLines.lines, {
         scrollTrigger: {
             trigger: '.story-section',
-            start: "200",
+            start: "100",
             end: "+=50",
             scrub: 1
         },
@@ -45,11 +45,11 @@ function init() {
         autoAlpha: 0
     });
 
-    gsap.set(".hero__left", {width: '125%'});
+    // gsap.set(".hero__left", {width: '125%'});
 
     let heroTl = gsap.timeline({
         scrollTrigger: {
-            trigger: '.hero__left',
+            trigger: 'body',
             start: "top top",
             end: "+=1000",
             scrub: 0.3
@@ -63,10 +63,12 @@ function init() {
         paddingRight: '0',
         ease: "power",
         duration: 1
-    }).to(".window-wrapper", {
-        xPercent: window.innerWidth < 1480 ? -250 : -220,
-        x: window.innerWidth / 5
-    }, "<=");
+    }).to(".window-gallery", {
+        xPercent:  window.innerWidth < 1480 ? -40 : -30,
+        // x: window.innerWidth / 5,
+    }, "<=").to(".window-wrapper", {
+        boxShadow: '0px 1px 0px rgba(17,17,26,0.05), 0px 0px 8px rgba(17,17,26,0.1)'
+    });
 
     let headingTl = gsap.timeline();
     headingTl.to(heroHeadingSplit.lines, {
@@ -81,7 +83,7 @@ function init() {
 /*         x: `calc(5vw - 15%)`,
         x: window.innerWidth / 20 - */
         x: -100,
-        xPercent: window.innerWidth < 1480 ? -10 : -5,
+        xPercent: window.innerWidth < 1480 ? -15 : -5,
     }, "+=0.6")
     .to(heroHeadingSplit.lines, {
         display: 'none'
@@ -90,7 +92,7 @@ function init() {
         maxWidth: '350'
     })
     .to('.nav', {
-        backgroundColor: 'var(--body-bg)'
+        borderBottomColor: 'transparent'
     });
     
     heroTl
@@ -100,7 +102,7 @@ function init() {
     /* Left panel border fade */
     gsap.to('.hero__left', {
         scrollTrigger: {
-            trigger: '.hero__left',
+            trigger: 'body',
             start: "top top",
             end: "+=2000",
             scrub: 0.1
@@ -112,7 +114,7 @@ function init() {
     /* Left panel inner content fade */
     gsap.to('.left__inner', {
         scrollTrigger: {
-            trigger: '.hero__left',
+            trigger: 'body',
             start: "top top",
             scrub: 0.1
         },
@@ -120,8 +122,8 @@ function init() {
         ease: "power3"
     });
 
-    gsap.to('.hero__heading', {
-        xPercent: 10,
+    gsap.from('.hero__heading', {
+        xPercent: -30,
         ease: "power3",
     });
 
@@ -189,7 +191,7 @@ function init() {
 
     gsap.set(".window-wrapper", {
         scale: 0.7,
-        xPercent: 20
+        xPercent: -20
     });
 
     gsap.to(".window-wrapper", {
@@ -199,8 +201,31 @@ function init() {
             end: "+=500",
             scrub: true
         },
-        y: '-90%',
+        y: '-80%',
         scale: 0.9,
+    });
+
+    const animLines = gsap.utils.toArray('.featured__post, .featured__ch');
+
+    animLines.forEach(ele => {
+        const textSplit = SplitText.create(ele, {
+            type: "lines",
+            mask: "lines",
+            linesClass: "line++",
+            autoSplit: true,
+            deepSlice: false
+        });
+
+        gsap.from(textSplit.lines, {
+            scrollTrigger: {
+                trigger: ele,
+                start: "top 80%"
+            },
+            duration: 0.4,
+            y: '100%',
+            autoAlpha: 0,
+            stagger: 0.1
+        })
     });
 }
 

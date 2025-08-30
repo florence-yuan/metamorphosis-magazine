@@ -612,3 +612,73 @@ Img URLs
     transform: translateX(-50%);
     z-index: -1
 }
+
+/* Featured characters */
+
+
+
+.featured__ch {
+    flex: 1;
+    display: block;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 1.5em 2em 2em;
+    /* border: 1px solid var(--primary-blue); */
+}
+
+.featured__ch + .featured__ch {
+    border-left: 1px solid var(--primary-blue);
+}
+
+.featured__ch .line2-mask,
+.featured__ch .line3-mask {
+    margin-top: 0.5em;
+}
+
+.ch__inner {
+    padding: 1.5em 1em;
+}
+
+.ch__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.ch__title {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+/* index.astro */
+
+const masthead = "The Metamorphosis";
+
+/* const featuredNames = [
+	"Poet Baudelaire",
+	"Artist Winterhalter",
+	"Itinerant Shepherd",
+	"Traveller",
+	"Nihilist Ippolit",
+	"Violinist Sarasate",
+];
+
+const lenStep = 5;
+const lineLen = [];
+for (let llen = 100 - 10 * lenStep; llen <= 100; llen += lenStep)
+	lineLen.push(llen);
+
+lineLen.push(...lineLen.toReversed().slice(1)); */
+
+
+// const collections = [
+// 	{
+// 		link: "folktales_of_the_east",
+// 		title: "Folk tales of the east"
+// 	}
+// ]
+/* const colResponse = await fetch("./collections/collection_details.json");
+const colData = await colResponse.json(); */
+// console.log(colData[0]);

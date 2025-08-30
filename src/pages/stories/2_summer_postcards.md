@@ -4,16 +4,13 @@ layout: ../../layouts/MarkdownPostLayout.astro
 pubDate: 10 July 2025
 author: Florence Yuan
 date: 2024-02-15T00:00:00.000Z
-thumbnail: https://images.unsplash.com/photo-1487260211189-670c54da558d?q=80&w=1287&auto=format&fit=crop
 title: Summer Postcards
+collection: ekphrasis
 tags:
   - summer
   - surrealism
   - postcards
   - short story
-image:
-  url: https://images.unsplash.com/photo-1528909257635-429e04fab8d4?w=900&auto=format&fit=crop
-  altText: An eye with a person inside
 description: Summer brings wind of the Aegean, and Sally finds refuge in mythology and postcards.
 ---
 No Name’s Land

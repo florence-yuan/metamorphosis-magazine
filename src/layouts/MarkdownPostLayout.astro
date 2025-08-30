@@ -8,11 +8,19 @@ const {frontmatter} = Astro.props;
 <BaseLayout>
     <article class="post">
         <header class="post__header">
+            {frontmatter.collection && <div class="post__col">
+                <span>
+                    This story belongs to the collection
+                    <a href={`/collections/${frontmatter.collection}`}>
+                        "{frontmatter.collection.split("_").join(" ")}"
+                    </a>
+                </span>
+            </div>}
             <div class="post__header__text">
                 <h1 class="post__title">{frontmatter.title}</h1>
                 <p class="post__author">By {frontmatter.author}</p>
                 <!-- <p class="post__pubDate">Published on {frontmatter.pubDate}</p> -->
-                <p class="post__description">{frontmatter.description}</p>
+                <!-- <p class="post__description">{frontmatter.description}</p> -->
             </div>
             {frontmatter.image && 
                 <img
@@ -27,7 +35,7 @@ const {frontmatter} = Astro.props;
         <footer>
             <div class="post__tags">
                 {frontmatter.tags.map((tag : string) => (
-                    <a class="tag no-underline" href={`/tags/${tag}`}>
+                    <a class="tag no-underline">
                         {tag}
                     </a>
                 ))}

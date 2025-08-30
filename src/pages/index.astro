@@ -5,37 +5,9 @@ import FeaturedCharacters from "../components/index/FeaturedCharacters.astro";
 
 import "../styles/index.css";
 
-const masthead = "The Metamorphosis";
-
-/* const featuredNames = [
-	"Poet Baudelaire",
-	"Artist Winterhalter",
-	"Itinerant Shepherd",
-	"Traveller",
-	"Nihilist Ippolit",
-	"Violinist Sarasate",
-];
-
-const lenStep = 5;
-const lineLen = [];
-for (let llen = 100 - 10 * lenStep; llen <= 100; llen += lenStep)
-	lineLen.push(llen);
-
-lineLen.push(...lineLen.toReversed().slice(1)); */
-
-console.log("HEYEYE");
 const collections = Object.values(
 	import.meta.glob("./collections/*.md", { eager: true }),
 );
-// const collections = [
-// 	{
-// 		link: "folktales_of_the_east",
-// 		title: "Folk tales of the east"
-// 	}
-// ]
-/* const colResponse = await fetch("./collections/collection_details.json");
-const colData = await colResponse.json(); */
-// console.log(colData[0]);
 ---
 
 <BaseLayout>
@@ -52,14 +24,14 @@ const colData = await colResponse.json(); */
 					</p>
 					<p>In metamorphoses, there is both horror and beauty.</p>
 					<p>But stasis is the most dreadful state of all.</p>
-					<p>The young live in a state of change.</p>
+					<p>The young live in stages of change.</p>
 					<p>
 						Whether we are bugs or men, or somewhere in between, we
 						have a unique story to tell.
 					</p>
 					<p>
 						Here we present these stories, as well as the
-						alter-egoes (be they bugs and men) of your imagination
+						alter-egoes of your imagination (be they bugs or men)
 						that form the dramatis personae of our many
 						metamorphoses.
 					</p>
@@ -76,7 +48,7 @@ const colData = await colResponse.json(); */
 					<div class="hero__cap" />
 				</div> -->
 				<h1 class="anim hero__heading">
-					The Metamo<br />rphosis
+					The<br />Metamo<br />rphosis
 				</h1>
 				<h1 class="hero__heading2">Featured collections</h1>
 				<!-- <h1 class="hero__heading hero__clip">
@@ -84,7 +56,7 @@ const colData = await colResponse.json(); */
 				</h1> -->
 				<div class="hero__desc">
 					A magazine for young writers<br />
-					With thematic releases and character galleries
+					A portrait of change: past and present
 				</div>
 			</div>
 			<div class="window-gallery">
@@ -102,16 +74,30 @@ const colData = await colResponse.json(); */
 						</a>
 					))
 				}
-				<a href="#" class="window-wrapper window--more">
+<!-- 				<a href="#" class="window-wrapper window--more">
 					<div class="window__content">
 						Have an idea for a new collection? Share your idea here.
 					</div>
 				</a>
-			</div>
+			</div> -->
 		</div>
 	</section>
 	<div class="body-wrapper">
-		<section id="story-section" class="section section2 section--2c">
+		<section id="feature-section" class="section section2">
+			<div class="section__inner">
+				<h1 class="section__heading">Upcoming Collection</h1>
+				<div class="section2__tag">Changing Communities</div>
+				<div class="section2__body">
+					<div class="section2__content">
+						<p>
+							Change is nothing new. In fact it has been a constant since the beginning of the universe. What is new is the alarming speed at which change is eradicating the past of our communities. In some cases, the past is literally buried, and only recently have we dug it up again and put it in museums, where thousands look upon its art, pottery and everyday objects with admiration.  But we need not mount a butterfly in a glass case in order to remember it. Sometimes we do not need a physical specimen of a butterfly at all. In this collection, we present multimedia portfolios of sights, sounds, and memories recorded from careful investigations into our communities' past - an old bridge, abandoned structures, a closed stall, peeling paint on a wall... Fleeting impressions that, like butterflies, embody both fragility and beauty. All this is made personal, with poetry, fiction, even art.
+						</p>
+						<a href="/contribute" class="link--btn btn--load">Contribute</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="story-section" class="section section3 section--2c">
 			<div class="section__inner">
 				<h1 class="section__heading">Featured stories</h1>
 				<div class="section__body">
@@ -121,25 +107,9 @@ const colData = await colResponse.json(); */
 						))}
 						<div class="bg__cap" />
 					</div> -->
-					<div class="section__main section2__featured">
+					<div class="section__main section3__featured">
 						<FeaturedPosts />
 						<a href="#" class="link--btn btn--load">More stories</a>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section id="story-section" class="section section3">
-			<div class="section__inner">
-				<h1 class="section__heading">Dramatis Personae</h1>
-				<div class="section__body">
-					<div class="section3__intro"></div>
-					<div class="section__main section3__featured">
-						<div class="featured__inner">
-							<FeaturedCharacters />
-						</div>
-						<a href="#" class="link--btn btn--load"
-							>More characters</a
-						>
 					</div>
 				</div>
 			</div>

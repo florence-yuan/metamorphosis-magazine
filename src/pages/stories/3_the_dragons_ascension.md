@@ -2,18 +2,15 @@
 formattedDate: 2025-08-15
 layout: ../../layouts/MarkdownPostLayout.astro
 pubDate: 15 Aug 2025
-author: Florence Yuan
+author: The New Literati
 date: 2024-08-15T00:00:00.000Z
-thumbnail: https://images.unsplash.com/photo-1487260211189-670c54da558d?q=80&w=1287&auto=format&fit=crop
 title: The Dragon’s Ascension and the Unexpected Snag
 subtitle: Clothing and divinity, from the West to the East
+collection: folktales_of_the_east
 tags:
   - myths
   - dragon
   - irony
-image:
-  url: https://images.unsplash.com/photo-1528909257635-429e04fab8d4?w=900&auto=format&fit=crop
-  altText: An eye with a person inside
 description: It is easier to become a dragon than to stay one. Oh ye mortals, shed your earthly shame, lest you hit an unexpected snag...
 ---
 

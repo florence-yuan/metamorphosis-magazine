@@ -6,20 +6,26 @@
 
 .post__header__text,
 .post__body,
-.post__tags {
-    width: 60rem;
+.post__tags,
+.post__col {
+    width: 50rem;
     margin: 0 auto;
 }
 
+.post__col {
+    margin-bottom: 4rem;
+}
+
 .post__title {
-    font-size: 5rem;
+    font-size: 3rem;
     font-weight: 500;
-    margin-bottom: 0.2em;
+    margin-bottom: 0.6em;
+    font-family: "Literata", serif;
+    line-height: 1.2;
 }
 
 .post__author {
-    font-family: "Josefin Sans", sans-serif;
-    font-size: 1.2rem;
+    text-indent: 1em;
 }
 
 .post__description {
@@ -35,13 +41,6 @@
     margin-top: 2em;
     /* font-family: 'EB Garamond', serif; */
     line-height: 2;
-}
-
-.post__body p:first-child::first-letter {
-    font-size: 6rem;
-    font-weight: 500;
-    float: left;
-    font-family: "Josefin Sans", sans-serif;
 }
 
 .post__body a {

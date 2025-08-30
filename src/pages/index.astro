@@ -1,7 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import FeaturedPosts from "../components/index/FeaturedPosts.astro";
-import FeaturedCharacters from "../components/index/FeaturedCharacters.astro";
 
 import "../styles/index.css";
 
@@ -36,24 +35,14 @@ const collections = Object.values(
 						metamorphoses.
 					</p>
 				</div>
-				<!-- <p>THE METAMORPHOSIS - A magazine for young writers</p> -->
 			</div>
 		</div>
 		<div class="hero__right">
 			<div class="hero__top">
-				<!-- <div class="hero__img">
-					{lineLen.map(llen => (
-						<div class="hero__line" style={{height: llen + '%'}} />
-					))}
-					<div class="hero__cap" />
-				</div> -->
 				<h1 class="anim hero__heading">
 					The<br />Metamo<br />rphosis
 				</h1>
 				<h1 class="hero__heading2">Featured collections</h1>
-				<!-- <h1 class="hero__heading hero__clip">
-					{masthead}
-				</h1> -->
 				<div class="hero__desc">
 					A magazine for young writers<br />
 					A portrait of change: past and present
@@ -74,12 +63,6 @@ const collections = Object.values(
 						</a>
 					))
 				}
-<!-- 				<a href="#" class="window-wrapper window--more">
-					<div class="window__content">
-						Have an idea for a new collection? Share your idea here.
-					</div>
-				</a>
-			</div> -->
 		</div>
 	</section>
 	<div class="body-wrapper">
@@ -101,12 +84,6 @@ const collections = Object.values(
 			<div class="section__inner">
 				<h1 class="section__heading">Featured stories</h1>
 				<div class="section__body">
-					<!-- <div class="bg__img">
-						{lineLen.map(llen => (
-							<div class="bg__line" style={{width: llen + '%'}} />
-						))}
-						<div class="bg__cap" />
-					</div> -->
 					<div class="section__main section3__featured">
 						<FeaturedPosts />
 						<a href="#" class="link--btn btn--load">More stories</a>

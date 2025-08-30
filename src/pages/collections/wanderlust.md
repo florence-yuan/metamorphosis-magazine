@@ -5,7 +5,7 @@ pubDate: 15 Aug 2025
 date: 2025-08-15T00:00:00.000Z
 author: Travellers
 image:
-    url: /src/assets/images/pattern3.svg
+    url: ../../../src/assets/images/pattern3.svg
     color: var(--primary-blue)
     bgColor: var(--primary-yellow)
 

@@ -5,7 +5,7 @@ pubDate: 15 Aug 2025
 date: 2025-08-15T00:00:00.000Z
 author: The New Literati
 image:
-    url: ../../../src/assets/images/pattern2.svg
+    url: pattern2.svg
     color: var(--primary-yellow)
     bgColor: var(--primary-blue)
 

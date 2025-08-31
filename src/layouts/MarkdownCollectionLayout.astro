@@ -20,15 +20,7 @@ const colStories = colStoryUrls.map((surl) =>
     allStories.find((s) => s.file.includes(surl)),
 );
 
-console.log(colStories);
-
-/* const colStoryUrls = Object.values(
-	import.meta.glob("../pages/collections/collection_details.json", { eager: true }),
-)[0];
-
-const colStories = colStoryUrls.map(url => (
-    Object.values(import.meta.glob("../pages/stories/" + url + ".md", { eager: true }))[0]
-)); */
+// console.log(colStories);
 ---
 
 <BaseLayout>
@@ -38,7 +30,7 @@ const colStories = colStoryUrls.map(url => (
                 class="col__cover"
                 style={{
                     backgroundImage: frontmatter.image.url
-                        ? `url(${frontmatter.image.url})`
+                        ? `url(../../../src/assets/images/${frontmatter.image.url})`
                         : "none",
                 }}
             >

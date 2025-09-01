@@ -111,6 +111,13 @@ body {
     font-weight: 300;
 }
 
+@media (scripting: enabled) {
+    .hero__heading2 {
+        opacity: 0;
+        visibility: none;
+    }
+}
+
 .hero__clip {
     color: var(--primary-blue);
     -webkit-text-stroke-width: 1px;

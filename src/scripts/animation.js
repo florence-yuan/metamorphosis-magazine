@@ -24,6 +24,8 @@ function init() {
         duration: 0.6
     }); */
 
+    gsap.set(".hero__heading2", {autoAlpha: 1});
+
     const colHeadingSplit = SplitText.create('.hero__heading2', {
         type: "lines",
         mask: "lines",

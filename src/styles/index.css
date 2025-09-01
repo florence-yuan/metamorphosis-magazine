@@ -207,15 +207,15 @@ body {
 }
 
 .window-wrapper:nth-child(1)::before {
-    background-image: url(../assets/images/pattern1.svg);
+    background-image: url(../assets/images/patterns/pattern1.svg);
 }
 
 .window-wrapper:nth-child(2)::before {
-    background-image: url(../assets/images/pattern2.svg);
+    background-image: url(../assets/images/patterns/pattern2.svg);
 }
 
 .window-wrapper:nth-child(3)::before {
-    background-image: url(../assets/images/pattern3.svg);
+    background-image: url(../assets/images/patterns/pattern3.svg);
 }
 
 .window__content {
@@ -373,7 +373,6 @@ body {
     margin-top: 10rem;
     width: 105%;
     padding: 0 3rem calc(1.5rem + 2vw);
-    /* background-image: url(../assets/images/pattern7.svg); */
     background-repeat: no-repeat;
     background-position: right top;
     background-size: 50rem;

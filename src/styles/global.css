@@ -19,7 +19,7 @@
     --border-color: #fff;
     --border-color2: #334352;
     --border-color3: #4c6072;
-    --text-color2: #ccc;
+    --text-color2: #333;
     --text-color3: rgb(119, 119, 119);
 
     --primary-blue: #96ced9;
@@ -90,14 +90,16 @@ a {
     transform-origin: left;
 }
 
-.post a {
+.post a,
+.article a {
     width: max-content;
     text-decoration: none;
     color: var(--text-color);
     line-height: 1;
 }
 
-.post a::before {
+.post a::before,
+.article a::before {
     content: '';
     position: absolute;
     bottom: 0;
@@ -126,7 +128,8 @@ a {
     }
 }
 
-.post a:hover::before {
+.post a:hover::before,
+.article a:hover::before {
     animation-name: animUnderline;
     animation-duration: 0.3s;
     animation-fill-mode: both;

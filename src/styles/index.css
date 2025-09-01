@@ -315,7 +315,7 @@ body {
 /* Section 2 */
 
 .section2 {
-    padding-top: 5rem;
+    padding: 5rem 3rem 0;
     border-top: 1px solid var(--text-color);
     background-color: var(--body-bg);
     position: relative;
@@ -343,7 +343,7 @@ body {
 
 .section2__body {
     display: flex;
-    padding-left: 4rem;
+    justify-content: center;
 }
 
 .section2__content {
@@ -372,7 +372,7 @@ body {
 .section3 {
     margin-top: 10rem;
     width: 105%;
-    padding-bottom: calc(1.5rem + 2vw);
+    padding: 0 3rem calc(1.5rem + 2vw);
     /* background-image: url(../assets/images/pattern7.svg); */
     background-repeat: no-repeat;
     background-position: right top;

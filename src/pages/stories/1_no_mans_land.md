@@ -5,7 +5,7 @@ pubDate: 15 Jun 2025
 author: The Traveller
 date: 2024-02-15T00:00:00.000Z
 title: No Man's Land
-collection: wanderlust
+collection: exiles
 tags:
   - names
   - loneliness

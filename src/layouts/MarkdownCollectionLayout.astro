@@ -20,7 +20,7 @@ const colStories = colStoryUrls.map((surl) =>
     allStories.find((s) => s.file.includes(surl)),
 );
 
-// console.log(colStories);
+console.log("hello", colStories);
 ---
 
 <BaseLayout>
@@ -30,7 +30,7 @@ const colStories = colStoryUrls.map((surl) =>
                 class="col__cover"
                 style={{
                     backgroundImage: frontmatter.image.url
-                        ? `url(../../../src/assets/images/${frontmatter.image.url})`
+                        ? `url(${frontmatter.image.url})`
                         : "none",
                 }}
             >

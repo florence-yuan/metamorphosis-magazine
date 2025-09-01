@@ -14,4 +14,4 @@ tags:
 description: No doubt water is purer than silver, but even divine providence agrees that the one, but not the other, will be rewarded to the purer of heart.
 ---
 
-Once there were a pair of travellers
+Once there was a pair of travellers

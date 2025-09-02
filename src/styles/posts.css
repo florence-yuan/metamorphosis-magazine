@@ -63,6 +63,12 @@
     margin-top: 0em;
 }
 
+.post__body hr {
+    border-top: none;
+    border-bottom: 1px solid var(--primary-blue);
+    margin: 2rem 0;
+}
+
 .post__tags {
     margin-top: 3rem;
     display: flex;

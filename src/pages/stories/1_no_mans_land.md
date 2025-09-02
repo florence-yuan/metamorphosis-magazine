@@ -7,7 +7,7 @@ date: 2024-02-15T00:00:00.000Z
 title: No Man's Land
 collection: exiles
 tags:
-  - names
+  - identity
   - loneliness
   - exile
 description: "\"His name.  It felt so important, despite, or perhaps because of the acute loneliness of the land.  It was an anchor of sorts, a lone figment of fact whose significance was disproportionately large in a land of nothingness, for names, like these intangible vain truths, had always been an obsession for him.\"\t-\t In exile, a lonely man ponders the meaning of names."

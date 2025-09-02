@@ -9,9 +9,9 @@ subtitle: Greed and suffering
 collection: folktales_of_the_east
 tags:
   - myths
-  - dragon
+  - greed
   - irony
 description: No doubt water is purer than silver, but even divine providence agrees that the one, but not the other, will be rewarded to the purer of heart.
 ---
 
-Once there was a pair of travellers
+_(In Progress)_

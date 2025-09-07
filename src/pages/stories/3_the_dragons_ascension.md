@@ -8,7 +8,7 @@ title: The Dragon’s Ascension and the Unexpected Snag
 subtitle: Clothing and divinity, from the West to the East
 collection: folktales_of_the_east
 tags:
-  - myths
+  - folktale
   - dragon
   - irony
 description: It is easier to become a dragon than to stay one. Oh ye mortals, shed your earthly shame, lest you hit an unexpected snag...

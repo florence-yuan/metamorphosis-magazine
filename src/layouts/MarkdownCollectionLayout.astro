@@ -26,8 +26,7 @@ const colStories = colStoryUrls.map((surl) =>
 const allBgImgs = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/patterns/*.svg');
 const bgImg = allBgImgs[bgImgPath] ? allBgImgs[bgImgPath]() : null;
 
-console.log('woohoo', bgImg);
-// console.log("hello", colStories);
+console.log(bgImg)
 ---
 
 <BaseLayout>

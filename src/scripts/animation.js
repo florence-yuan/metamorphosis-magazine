@@ -38,7 +38,7 @@ function init() {
 
     gsap.to(heroDescLines.lines, {
         scrollTrigger: {
-            trigger: '.story-section',
+            trigger: 'body',
             start: "100",
             end: "+=50",
             scrub: 1
@@ -82,17 +82,12 @@ function init() {
         duration: 0.4
     }, "<=")
     .to('.hero__heading2', {
-/*         x: `calc(5vw - 15%)`,
-        x: window.innerWidth / 20 - */
         x: -100,
         xPercent: window.innerWidth < 1480 ? -15 : -5,
     }, "+=0.6")
     .to(heroHeadingSplit.lines, {
         display: 'none'
     }, "<=")
-    .to('.window--more', {
-        maxWidth: '350'
-    })
     .to('.nav', {
         borderBottomColor: 'transparent'
     });

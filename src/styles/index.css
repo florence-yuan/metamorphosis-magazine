@@ -322,6 +322,9 @@ body {
 .body-wrapper {
     position: relative;
     background-color: var(--body-bg);
+    width: calc(100% + 2rem);
+    left: -2rem;
+    padding: 0 2rem;
     z-index: 100;
 }
 
@@ -350,8 +353,9 @@ body {
     font-size: 3rem;
     letter-spacing: 0.2rem;
     font-weight: 500;
-    margin-bottom: 1.5rem;
+    margin: 1.5rem 0;
     padding-left: 2rem;
+    line-height: 1.1;
 }
 
 .section2__body {

@@ -3,7 +3,7 @@ formattedDate: 2025-07-10
 layout: ../../layouts/MarkdownPostLayout.astro
 pubDate: 10 July 2025
 author: Florence Yuan
-date: 2024-02-15T00:00:00.000Z
+date: 2025-08-30T00:00:00.000Z
 title: Divine love
 subtitle: or, Aphrodite, Adonis, and Persephone
 collection: ekphrasis

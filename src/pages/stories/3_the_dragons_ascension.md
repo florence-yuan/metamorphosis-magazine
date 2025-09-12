@@ -3,7 +3,7 @@ formattedDate: 2025-08-15
 layout: ../../layouts/MarkdownPostLayout.astro
 pubDate: 15 Aug 2025
 author: The New Literati
-date: 2024-08-15T00:00:00.000Z
+date: 2025-08-15T00:00:00.000Z
 title: The Dragon’s Ascension and the Unexpected Snag
 subtitle: Clothing and divinity, from the West to the East
 collection: folktales_of_the_east

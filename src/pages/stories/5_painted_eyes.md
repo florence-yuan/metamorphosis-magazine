@@ -15,7 +15,7 @@ tags:
 description: Before the deluge came, the eyes of the stone lion turned scarlet...
 ---
 
-Once upon a time, there was a village of very selfish people.  They never shared anything with their neighbors, and their hatefulness hang over them like a foul mist.  Enraged by what they witnessed, the gods convened to pass judgment on the villagers, and most were set on exterminating the entire village with a single flood.  One god, however, interjected that a little mercy never went amiss: if there was a single seed of goodness in the entire village, it should be allowed to live, and he would personally see if it existed.  The council of gods agreed, so the god descended to the village in the guise of a beggar.
+Once upon a time, there was a village of very selfish people.  They never shared anything with their neighbors, and their hatefulness hung over them like a foul mist.  Enraged by what they witnessed, the gods convened to pass judgment on the villagers, and most were set on exterminating the entire village with a single flood.  One god, however, interjected that a little mercy never went amiss: if there was a single seed of goodness in the entire village, it should be allowed to live, and he would personally see if it existed.  The council of gods agreed, so the god descended to the village in the guise of a beggar.
 
 From end to end of the village he walked, and at each door he paused and knocked.  To every single villager he rasped, “Oh, good lady good sir, for three days I have gone without food and drink.  Please can you spare me a morsel or two?”  But the villagers had not a shred of compassion.  “We do not give food to beggars,” they said bluntly, and slammed the door in the god’s face.
 
